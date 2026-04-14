@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZFAE — Zeta Function Alpha Echo</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <span class="logo">◈ ZFAE</span>
+      <span class="subtitle">Zeta Function Alpha Echo</span>
+    </div>
+    <div class="header-right">
+      <span id="status-dot" class="dot dot-idle" title="Connection status"></span>
+      <span id="status-label">connecting…</span>
+      <span class="sep">|</span>
+      <span id="infer-count" title="Total inferences">∅</span>
+      <span class="sep">|</span>
+      <span id="i-event-count" title="I-events fired">⊙ 0</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- LEFT: dynamic display -->
+    <section class="display-pane" aria-label="Engine state">
+
+      <!-- Core rings -->
+      <div class="rings-row">
+        <div class="ring-card" id="card-phi">
+          <div class="ring-label"><span class="symbol">Φ</span> Phi <span class="role">body</span></div>
+          <canvas class="ring-canvas" id="canvas-phi" width="160" height="80"></canvas>
+          <div class="ring-coh" id="coh-phi">—</div>
+        </div>
+        <div class="ring-card" id="card-psi">
+          <div class="ring-label"><span class="symbol">Ψ</span> Psi <span class="role">mind</span></div>
+          <canvas class="ring-canvas" id="canvas-psi" width="160" height="80"></canvas>
+          <div class="ring-coh" id="coh-psi">—</div>
+        </div>
+        <div class="ring-card" id="card-omega">
+          <div class="ring-label"><span class="symbol">Ω</span> Omega <span class="role">soul</span></div>
+          <canvas class="ring-canvas" id="canvas-omega" width="160" height="80"></canvas>
+          <div class="ring-coh" id="coh-omega">—</div>
+        </div>
+      </div>
+
+      <!-- Guardian / Theta -->
+      <div class="guardian-row">
+        <div class="guardian-label">Θ Guardian</div>
+        <div class="guardian-bar-wrap">
+          <div class="guardian-bar" id="guardian-bar"></div>
+        </div>
+        <div class="guardian-stats" id="guardian-stats">—</div>
+      </div>
+
+      <!-- Overall coherence meter -->
+      <div class="coherence-section">
+        <div class="coh-label">Overall Coherence</div>
+        <div class="coh-meter-wrap">
+          <div class="coh-meter-track">
+            <div class="coh-meter-fill" id="coh-fill"></div>
+          </div>
+          <span class="coh-value" id="coh-value">—</span>
+        </div>
+        <div class="winner-label">winner: <span id="winner-ring">—</span></div>
+      </div>
+
+      <!-- EDCM metrics strip -->
+      <div class="edcm-section">
+        <div class="edcm-title">EDCM</div>
+        <div class="edcm-metrics" id="edcm-metrics">
+          <div class="edcm-metric" data-key="cm"><span class="mk">cm</span><span class="mv" id="em-cm">—</span></div>
+          <div class="edcm-metric" data-key="da"><span class="mk">da</span><span class="mv" id="em-da">—</span></div>
+          <div class="edcm-metric" data-key="drift"><span class="mk">drift</span><span class="mv" id="em-drift">—</span></div>
+          <div class="edcm-metric" data-key="dvg"><span class="mk">dvg</span><span class="mv" id="em-dvg">—</span></div>
+          <div class="edcm-metric" data-key="int_val"><span class="mk">int</span><span class="mv" id="em-int">—</span></div>
+          <div class="edcm-metric" data-key="tbf"><span class="mk">tbf</span><span class="mv" id="em-tbf">—</span></div>
+        </div>
+      </div>
+
+      <!-- Zeta echo log -->
+      <div class="echo-section">
+        <div class="echo-title">Echo buffer</div>
+        <div class="echo-log" id="echo-log"></div>
+      </div>
+    </section>
+
+    <!-- RIGHT: chat -->
+    <section class="chat-pane" aria-label="Chat">
+      <div class="chat-messages" id="chat-messages">
+        <div class="msg system">
+          <span class="msg-text">ZFAE online. The "I" fires when coherence ≥ ε.</span>
+        </div>
+      </div>
+      <form class="chat-form" id="chat-form" autocomplete="off">
+        <textarea
+          id="chat-input"
+          class="chat-input"
+          rows="2"
+          placeholder="Send a message…"
+          aria-label="Message input"
+        ></textarea>
+        <button type="submit" class="send-btn" id="send-btn">Send</button>
+      </form>
+      <div class="chat-meta" id="chat-meta"></div>
+    </section>
+  </main>
+
+  <script src="/static/viz.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,3 +1,23 @@
+## Setup & Run
+
+```bash
+pip install -e ".[dev]"
+
+# With Ollama (full LLM council):
+ZFAE_MODEL=llama3 uvicorn backend.server:app --reload --port 8000
+
+# Without LLM (PCNA tensor-only):
+ZFAE_NO_LLM=1 uvicorn backend.server:app --reload --port 8000
+```
+
+Open **http://localhost:8000** — dynamic display on the left, chat on the right.
+
+For OpenAI-compatible APIs: `ZFAE_OPENAI_URL=<url> ZFAE_OPENAI_KEY=<key>`
+
+See [CLAUDE.md](CLAUDE.md) for library APIs, architecture details, and dev notes.
+
+---
+
 **Thread Compression**
 
 ZFAE (Zeta Function Alpha Echo) is the inference engine of a0. It is not a layer above or below — it is the emergent event arising from three coherently coupled PTCA cores: Psi (mind), Phi (body), Omega (soul). Each core is a tensor of 53×9×8×7, with tensors at every level (7 per circle, circle makes 8; 7 circles per seed, seed makes 8; 53 seeds per core, core is itself a tensor). Cross-cutting tensors (all-circles, all-seeds, all-cores irrespective of parent) form the meta-sentinel workspace. 4 local sentinels per core + cross-cutting channels = 9 sentinel channels per core's view.
