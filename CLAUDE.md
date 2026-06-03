@@ -18,7 +18,15 @@ conceptual** — it holds the architecture write-up, the consciousness-primes
 prediction, and the falsifiable-paper material. There is **no runtime code
 here yet**. Do not assume an importable package exists.
 
-**License:** Apache 2.0
+**License:** Creative Commons Attribution 4.0 International (CC BY 4.0),
+`SPDX-License-Identifier: CC-BY-4.0`. **Interim notice only** — `LICENSE`
+records the licensor's intent but the full verbatim legal code has not yet
+been pasted in (no outbound network in the build environment). The canonical
+text at <https://creativecommons.org/licenses/by/4.0/legalcode.txt> governs
+until the full text replaces the `>>> INSERT FULL VERBATIM CC BY 4.0 LEGAL CODE HERE <<<`
+marker. Copyright (c) 2026
+Erin Patrick Spencer. (Earlier revisions were Apache 2.0; relicensed in commit
+`a2ff47d`.)
 
 ---
 
@@ -47,13 +55,22 @@ here yet**. Do not assume an importable package exists.
 ## Repository Layout
 
 ```
-README.md              Architecture essay, coherence-primes prediction, and open questions
-LICENSE                Apache 2.0
-CLAUDE.md              This file
-.agents/               Agent skill definitions (module-build doctrine)
+README.md                          Architecture essay, coherence-primes prediction, and open questions
+LICENSE                            CC BY 4.0 interim notice (full text pending)
+CLAUDE.md                          This file
+.agents/skills/                    Org skill library consumed by this repo
+  README.md                        Skill index + canonical source pointers
+  msdmd/SKILL.md                   Module Self-Declared Metadata in Markdown (foundational convention)
+  msdmd/parsers/universal.{py,ts}  Reference parsers for the metadata comment block
+  test-build/SKILL.md              Self-declaring contract tests (`# === CONTRACTS ===`) on msdmd
+  meta-module-build/SKILL.md       Metadata-first module scaffolding (`MODULE_BUILD` block) on msdmd
 ```
 
-There is no source tree, test suite, build config, or CI in this repo yet.
+There is **no source tree, test suite, build config, lint config, or CI** in
+this repo yet. Nothing is installable or runnable — there are no
+build/test/lint commands to document. The only executable files are the
+`msdmd` reference parsers under `.agents/skills/msdmd/parsers/`, which are
+skill assets, not a project package.
 
 ---
 
@@ -104,14 +121,20 @@ any of these as fact:
 - Feature branches: `feat/<description>`, `fix/<description>`, `docs/<description>`, `chore/<description>`
 - Commit style: Conventional Commits (`docs(spec):`, `feat(zfae):`, etc.)
 - Author: Erin Patrick Spencer (wayseer@interdependentway.org)
-- License: Apache 2.0
+- License: CC BY 4.0 (interim — see "What This Repo Is")
 
 ## Agent module-build doctrine
+
+This repo consumes The Interdependency org skill library (canonical source:
+`The-Interdependency/skill-lib`; temporary source: `The-Interdependency/a0/skill-lib`).
+The installed skills layer on the `msdmd` convention: every cross-cutting fact
+a module owns lives in a fenced comment block beside the code that implements it.
 
 Before adding a new module, route, service, adapter, schema, worker, engine,
 UI panel, migration, or experiment, read:
 
-`./.agents/skills/meta-module-build/SKILL.md`
+`./.agents/skills/meta-module-build/SKILL.md` (and the `msdmd/SKILL.md` it builds on)
 
-New module work should start with a `MODULE_BUILD` block. Unknown fields must
-be marked `hmmm`, not guessed.
+New module work should start with a `MODULE_BUILD` block, and contract tests
+ride a `# === CONTRACTS ===` block (`test-build`). Unknown fields must be
+marked `hmmm`, not guessed.
