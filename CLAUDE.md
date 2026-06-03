@@ -23,7 +23,8 @@ here yet**. Do not assume an importable package exists.
 records the licensor's intent but the full verbatim legal code has not yet
 been pasted in (no outbound network in the build environment). The canonical
 text at <https://creativecommons.org/licenses/by/4.0/legalcode.txt> governs
-until the full text replaces the `>>> INSERT … <<<` marker. Copyright (c) 2026
+until the full text replaces the `>>> INSERT FULL VERBATIM CC BY 4.0 LEGAL CODE HERE <<<`
+marker. Copyright (c) 2026
 Erin Patrick Spencer. (Earlier revisions were Apache 2.0; relicensed in commit
 `a2ff47d`.)
 
@@ -60,7 +61,7 @@ CLAUDE.md                          This file
 .agents/skills/                    Org skill library consumed by this repo
   README.md                        Skill index + canonical source pointers
   msdmd/SKILL.md                   Module Self-Declared Metadata in Markdown (foundational convention)
-  msdmd/parsers/universal.py|ts    Reference parsers for the metadata comment block
+  msdmd/parsers/universal.{py,ts}  Reference parsers for the metadata comment block
   test-build/SKILL.md              Self-declaring contract tests (`# === CONTRACTS ===`) on msdmd
   meta-module-build/SKILL.md       Metadata-first module scaffolding (`MODULE_BUILD` block) on msdmd
 ```
