@@ -83,6 +83,16 @@ skill assets, not a project package.
   environment-independent standalone library (`The-Interdependency/pcea`).
 - **Phi replaces "Heartbeat"** in the core triad; the heartbeat is the clock,
   not a core.
+- **Place in the prime-tensor stack — ZFAE is the inference cap.** ZFAE *reads*
+  PCNA's trained **weights** and the structural **motion** produced by the PCTA
+  (circles → seeds) and PTCA (seeds → core) transformers, and infers over them;
+  it does not build or train tensors. This is consistent with the "ZFAE runtime
+  → `a0`" boundary (the cores ARE ZFAE; runtime in `a0`; this repo stays
+  conceptual). PCEA/Guardian seals the inference state for privacy and is
+  **orthogonal** to the chain, not a layer of it. Canonical stack map:
+  `The-Interdependency/interdependent-lib : docs/prime-tensor-stack.md`. No
+  theorem/proof/empirical status transfers between these repos; "motion" is
+  described there by role, formal definition `hmmm`.
 
 ---
 
