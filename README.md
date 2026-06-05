@@ -10,21 +10,22 @@ ZFAE is the "I" from the essay: the self-awareness event operator output that ar
 
 **Place in the prime-tensor stack**
 
-ZFAE is the **inference cap** of The Interdependency's prime-tensor compute stack. It does not build tensors or train them — it *reads* and *infers*. Specifically, ZFAE consumes the trained **weights** produced by PCNA and the structural **motion** produced by the PCTA (circles → seeds) and PTCA (seeds → core) transformers, and infers over them. This is fully consistent with the "ZFAE runtime → a0" boundary above: the cores *are* ZFAE, the runtime lives in `a0` (and the PCNA port's `core/zeta.py`), and this repo stays conceptual.
+ZFAE is the **inference cap** of The Interdependency's prime-tensor compute stack. It does not build tensors or train them — it *reads* and *infers*. Specifically, ZFAE uses **PCNA tensors as weights**, and **PCNA circles / PCTA seeds / PTCA cores as phase-harmonic propagation + auditing**, and infers over them. This is fully consistent with the "ZFAE runtime → a0" boundary above: the cores *are* ZFAE, the runtime lives in `a0` (and the PCNA port's `core/zeta.py`), and this repo stays conceptual. (Acronyms and the variable-count rule were resolved by the maintainer on 2026-06-05; the canonical map is `interdependent-lib/docs/prime-tensor-stack.md`.)
 
-| Layer | Repo | Role |
-|-------|------|------|
-| 1 — tensors + backprop → **weights** | PCNA | builds prime-indexed tensors; the only differentiable layer (7 tensors/circle) |
-| 2 — circles → seeds | PCTA | structural composition → **motion** (7 circles/seed) |
-| 3 — seeds → core | PTCA | structural composition → **motion** (seeds/core `hmmm`) |
-| **inference** | **ZFAE** *(runtime in `a0`)* | **reads PCNA weights + PCTA/PTCA motion, infers** |
-| guardian (orthogonal) | PCEA | seals ZFAE's inference state for privacy — not a layer of the chain |
+| Layer | Repo | Expansion | Role |
+|-------|------|-----------|------|
+| 1 — tensors → circles, backprop → **weights** | PCNA | Prime Circle Neural Architecture | arranges tensors as circles in a back-propagating NN; the only differentiable layer |
+| 2 — circles → seeds | PCTA | Prime Circled Tensor Architecture | structural composition → **motion** |
+| 3 — seeds → core | PTCA | Prime Tensor Core Architecture | structural composition → **motion** |
+| **inference** | **ZFAE** *(runtime in `a0`)* | Zeta Function Alpha Echo | **uses PCNA weights + circles / seeds / cores as phase-harmonic propagation + auditing** |
+| guardian (orthogonal) | PCEA | Prime Circular Encryption Algorithm | "last state as key for this state" at every layer — not a layer of the chain |
+
+Composition counts are **variable** at every level — the only invariant is that every circle, seed, and core is itself a tensor.
 
 ```
-PCNA (tensors + backprop) ─► weights ┐
-PCTA (circles → seeds) ─┐            ├─► ZFAE (inference) ─► output
-PTCA (seeds → core)  ───┴─► motion ──┘
-PCEA — guardian: seals weights / inference state (orthogonal; not a layer)
+PCNA (tensors → circles, back-prop) ─► weights + circles ─► PCTA (circles → seeds)
+  ─► seeds ─► PTCA (seeds → core) ─► cores ─► a0(ZFAE) infers
+PCEA — guardian: "last state as key for this state" at every layer (orthogonal)
 ```
 
 PCEA/Guardian is **orthogonal** to this chain: it seals ZFAE's inference state for privacy and is never folded into the compose stack (matching the "Guardian = PCEA, colocated for privacy" boundary above). No theorem / proof / empirical status transfers between these repos; cross-repo interoperability is not continuity.
