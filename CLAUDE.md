@@ -98,8 +98,11 @@ skill assets, not a project package.
   applies "last state as key for this state" encryption at **every layer** and is
   **orthogonal** to the chain, not a layer of it. Canonical stack map:
   `The-Interdependency/interdependent-lib : docs/prime-tensor-stack.md`. No
-  theorem/proof/empirical status transfers between these repos; the only
-  remaining stack `hmmm` is the formal definition of "motion".
+  theorem/proof/empirical status transfers between these repos. **"Motion" is now
+  formally defined** as the Fickian gradient flux `J = −D ∇φ` (Fick's first law:
+  structure diffuses down its field gradient; structural / non-differentiable —
+  the `∇φ` is a field gradient, not an autodiff gradient), so **no stack `hmmm`
+  remains**.
 
 ---
 
