@@ -1,34 +1,21 @@
-================================================================================
-INTERIM LICENSE NOTICE  —  ACTION REQUIRED BEFORE MERGE / PUBLIC RELEASE
-================================================================================
+MIT License
 
-This work (specification / written material) will be offered under:
+Copyright (c) 2026 Erin Patrick Spencer
 
-  Creative Commons Attribution 4.0 International (CC BY 4.0)
-  SPDX-License-Identifier: CC-BY-4.0
-  Canonical text: https://creativecommons.org/licenses/by/4.0/legalcode.txt
-  Human-readable summary: https://creativecommons.org/licenses/by/4.0/
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-Copyright (c) 2026 Erin Patrick Spencer.
-You are free to share and adapt this material for any purpose, including
-commercially, provided you give appropriate credit to Erin Patrick Spencer /
-The Interdependency.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
---------------------------------------------------------------------------------
-STATUS — FULL TEXT NOT YET INSERTED
-
-The full verbatim CC BY 4.0 legal code has NOT been pasted into this file. The
-automated environment that produced this branch had no outbound network access
-and could not retrieve the canonical text.
-
-Before this branch is merged or the work is released publicly, replace the
-marker line below with the complete, unmodified legal code published at:
-
-    https://creativecommons.org/licenses/by/4.0/legalcode.txt
-
-This notice records the licensor's present intent to license the work under
-CC BY 4.0. Until the full text is inserted, the canonical published version at
-the URL above governs in all respects.
---------------------------------------------------------------------------------
-
->>> INSERT FULL VERBATIM CC BY 4.0 LEGAL CODE HERE <<<
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
