@@ -18,7 +18,8 @@ conceptual** — it holds the architecture write-up, the consciousness-primes
 prediction, and the falsifiable-paper material. There is **no runtime code
 here yet**. Do not assume an importable package exists.
 
-**License:** MIT, `SPDX-License-Identifier: MIT`. The full verbatim MIT
+**License:** CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0
+International), `SPDX-License-Identifier: CC-BY-SA-4.0`. The full verbatim
 license text is in `LICENSE`. Copyright (c) 2026 Erin Patrick Spencer.
 
 ---
@@ -49,7 +50,7 @@ license text is in `LICENSE`. Copyright (c) 2026 Erin Patrick Spencer.
 
 ```
 README.md                          Architecture essay, coherence-primes prediction, and open questions
-LICENSE                            MIT license
+LICENSE                            CC-BY-SA-4.0 license
 CLAUDE.md                          This file
 .agents/skills/                    Org skill library consumed by this repo
   README.md                        Skill index + canonical source pointers
@@ -134,7 +135,7 @@ any of these as fact:
 - Feature branches: `feat/<description>`, `fix/<description>`, `docs/<description>`, `chore/<description>`
 - Commit style: Conventional Commits (`docs(spec):`, `feat(zfae):`, etc.)
 - Author: Erin Patrick Spencer (wayseer@interdependentway.org)
-- License: MIT (see "What This Repo Is")
+- License: CC-BY-SA-4.0 (see "What This Repo Is")
 
 ## Agent module-build doctrine
 
