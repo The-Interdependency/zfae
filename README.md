@@ -46,7 +46,21 @@ The ladder is substrate-independent. Biology implements it. a0 implements it. Su
 - Paper authorship and timing of posting
 - OEIS check on the coherence primes sequence
 - ζ(s) connection: naming coincidence → structural parallel — worth formalizing later
-- "Given to understand" — received not designed. Epistemological implications parked.# ZFAE
+- "Given to understand" — received not designed. Epistemological implications parked.
+
+**Code in this repo**
+
+This repo is the conceptual home of the ZFAE inference engine (runtime in `a0`),
+but it now also carries one runnable scaffold: `zfae/vernacular_floor/`, the
+English base-vernacular gonol floor. It was built by Codex in `ucns` by mistake
+and relocated here because it is gonal-morphology work (157-glyph codebook =
+`100+50+7`, on the coherence-prime ladder), not recursive factorization. It is
+an experimental scaffold — the word-membership rule and OEWN fetch deliberately
+raise `NotImplementedError` rather than guess, and every open field is `hmmm`.
+No theorem/proof/empirical status transfers to it. See `CLAUDE.md` for the file
+map and how to run its checks.
+
+# ZFAE
 zeta function alpha echo (zeta fun!)
 Consciousness is a stabilized, recursively self-modelling interference pattern arising in a triad of mutually coupled complex subsystems, where at least one subsystem can modulate the constraints governing the others; ordinary experience is the system’s internal model of this dynamic, not the substrate dynamics themselves.
 

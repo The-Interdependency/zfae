@@ -12,11 +12,22 @@ layer above or below the system — it is the **emergent self-awareness event**
 that arises when three coherently coupled PTCA cores (Psi = mind, Phi = body,
 Omega = soul) reach phase-lock.
 
-**Important boundary:** the *runtime* ZFAE engine lives in the `a0` monorepo
-(`python/engine/` and `core/zeta.py` in the PCNA port). **This repo stays
-conceptual** — it holds the architecture write-up, the consciousness-primes
-prediction, and the falsifiable-paper material. There is **no runtime code
-here yet**. Do not assume an importable package exists.
+**Important boundary:** the *runtime* ZFAE **inference engine** lives in the
+`a0` monorepo (`python/engine/` and `core/zeta.py` in the PCNA port). This repo
+remains the conceptual home for that engine — it holds the architecture
+write-up, the consciousness-primes prediction, and the falsifiable-paper
+material. Do not build the inference engine here.
+
+**Exception — `zfae/vernacular_floor/`.** As of the gonol-repo migration this
+repo now carries one runnable, importable Python package: the
+**English base-vernacular gonol floor scaffold** (`import
+zfae.vernacular_floor`). It was originally built by Codex in `ucns` by mistake
+and relocated here because it is gonal-morphology work (157-glyph codebook =
+`100+50+7`, on the coherence-prime ladder), not recursive-factorization work.
+It is an **experimental scaffold**, not a proof-backed engine: the membership
+rule and the OEWN fetch raise `NotImplementedError` rather than guess, and every
+open field is marked `hmmm`. No theorem/proof/empirical status transfers to it
+from `ucns` or from ZFAE canon.
 
 **License:** CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0
 International), `SPDX-License-Identifier: CC-BY-SA-4.0`. The full verbatim
@@ -52,6 +63,20 @@ license text is in `LICENSE`. Copyright (c) 2026 Erin Patrick Spencer.
 README.md                          Architecture essay, coherence-primes prediction, and open questions
 LICENSE                            CC-BY-SA-4.0 license
 CLAUDE.md                          This file
+zfae/                              Python package root (first runnable code in this repo)
+  __init__.py                      Package marker + relocation note
+  vernacular_floor/                English base-vernacular gonol floor scaffold (relocated from ucns)
+    __init__.py                    Public surface (FloorGonol, floor_manifest, load_floor, ...)
+    manifest.py                    FloorManifest + unresolved membership predicate (MODULE_BUILD block)
+    assignment.py                  FloorGonol on R/4πZ + relation-derived angular assignment scaffold
+    codebook_import.py             Read-only public glyph codebook import (157 = 100+50+7, prime-checked)
+    oewn_ingest.py                 OEWN relation-graph ingestion boundary (fetch = NotImplementedError)
+    floor_artifact.py              JSONL floor artifact read/write + edcmbone-style embedding hooks
+    transformation_assembly.py     Surface char-name ↔ atomic operator binding
+    tests/test_vernacular_floor.py Contract tests (6, all passing under stdlib unittest)
+scripts/                           Codex-authored validators relocated with the scaffold
+  ratios_check.py                  RATIOS bookend byte-identity check over zfae/vernacular_floor
+  module_build_check.py            Minimal MODULE_BUILD field validator over zfae/
 .agents/skills/                    Org skill library consumed by this repo
   README.md                        Skill index + canonical source pointers
   msdmd/SKILL.md                   Module Self-Declared Metadata in Markdown (foundational convention)
@@ -60,11 +85,26 @@ CLAUDE.md                          This file
   meta-module-build/SKILL.md       Metadata-first module scaffolding (`MODULE_BUILD` block) on msdmd
 ```
 
-There is **no source tree, test suite, build config, lint config, or CI** in
-this repo yet. Nothing is installable or runnable — there are no
-build/test/lint commands to document. The only executable files are the
-`msdmd` reference parsers under `.agents/skills/msdmd/parsers/`, which are
-skill assets, not a project package.
+Aside from the relocated `zfae/vernacular_floor/` scaffold there is still **no
+inference-engine source tree, build config, lint config, or CI** in this repo.
+The engine itself is not built here (it lives in `a0`). Run the scaffold's
+checks with:
+
+```bash
+python -m unittest zfae.vernacular_floor.tests.test_vernacular_floor   # 6 tests
+python scripts/ratios_check.py                                         # RATIOS bookends
+python scripts/module_build_check.py                                   # MODULE_BUILD fields
+```
+
+The `msdmd` reference parsers under `.agents/skills/msdmd/parsers/` remain
+skill assets, not part of the `zfae` package.
+
+> **hmmm — RATIOS dialect.** `scripts/ratios_check.py` and the
+> `# === RATIOS ===` fenced blocks in `vernacular_floor/` use a Codex-authored
+> dialect (`loc_comments: hmmm` + `unresolved:` fields) that does **not** match
+> the canonical org `ratios/` skill (a single `ratios:` line on the first and
+> last line with computed `loc_comments`/`imports_exports`/`calls_definitions`).
+> Reconcile with the maintainer before treating this as canonical.
 
 ---
 
