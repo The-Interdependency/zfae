@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zfae"
+version = "0.1.0"
+description = "Zeta Function Alpha Echo conceptual and reference utilities"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "CC-BY-SA-4.0" }
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
