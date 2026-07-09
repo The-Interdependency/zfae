@@ -1,7 +1,4 @@
-# === RATIOS ===
-# loc_comments: hmmm
-# unresolved: angular_assignment_law, affix_type_system
-# === END RATIOS ===
+# ratios: loc_comments=45:12 imports_exports=4:6 calls_definitions=16:8
 """Gonol assignment scaffold for relation-derived vernacular positions."""
 
 from __future__ import annotations
@@ -84,9 +81,4 @@ def identity_holds(gonols: Iterable[FloorGonol]) -> bool:
 
     unit = origin()
     return all(g.compose(unit) == g and unit.compose(g) == g for g in gonols)
-
-
-# === RATIOS ===
-# loc_comments: hmmm
-# unresolved: angular_assignment_law, affix_type_system
-# === END RATIOS ===
+# ratios: loc_comments=45:12 imports_exports=4:6 calls_definitions=16:8

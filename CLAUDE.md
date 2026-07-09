@@ -74,15 +74,15 @@ zfae/                              Python package root (first runnable code in t
     floor_artifact.py              JSONL floor artifact read/write + edcmbone-style embedding hooks
     transformation_assembly.py     Surface char-name ↔ atomic operator binding
     tests/test_vernacular_floor.py Contract tests (6, all passing under stdlib unittest)
-scripts/                           Codex-authored validators relocated with the scaffold
-  ratios_check.py                  RATIOS bookend byte-identity check over zfae/vernacular_floor
+scripts/                           Codex-authored validator relocated with the scaffold
   module_build_check.py            Minimal MODULE_BUILD field validator over zfae/
-.agents/skills/                    Org skill library consumed by this repo
+.agents/skills/                    Org skill library consumed by this repo (vendored @ skill-lib b6ac24c)
   README.md                        Skill index + canonical source pointers
   msdmd/SKILL.md                   Module Self-Declared Metadata in Markdown (foundational convention)
-  msdmd/parsers/universal.{py,ts}  Reference parsers for the metadata comment block
+  msdmd/parsers/universal.{py,ts}  Reference parsers (incl. single-line ratios reader)
   test-build/SKILL.md              Self-declaring contract tests (`# === CONTRACTS ===`) on msdmd
   meta-module-build/SKILL.md       Metadata-first module scaffolding (`MODULE_BUILD` block) on msdmd
+  ratios/ratios_check.py           Canonical composition-ratio runner (recompute + drift gate)
 ```
 
 Aside from the relocated `zfae/vernacular_floor/` scaffold there is still **no
@@ -92,19 +92,19 @@ checks with:
 
 ```bash
 python -m unittest zfae.vernacular_floor.tests.test_vernacular_floor   # 6 tests
-python scripts/ratios_check.py                                         # RATIOS bookends
+python .agents/skills/ratios/ratios_check.py --root zfae/vernacular_floor  # composition ratios
 python scripts/module_build_check.py                                   # MODULE_BUILD fields
 ```
 
 The `msdmd` reference parsers under `.agents/skills/msdmd/parsers/` remain
 skill assets, not part of the `zfae` package.
 
-> **hmmm — RATIOS dialect.** `scripts/ratios_check.py` and the
-> `# === RATIOS ===` fenced blocks in `vernacular_floor/` use a Codex-authored
-> dialect (`loc_comments: hmmm` + `unresolved:` fields) that does **not** match
-> the canonical org `ratios/` skill (a single `ratios:` line on the first and
-> last line with computed `loc_comments`/`imports_exports`/`calls_definitions`).
-> Reconcile with the maintainer before treating this as canonical.
+Composition ratios use the **canonical single-line seal**: each covered source
+file carries `# ratios: loc_comments=N:M imports_exports=N:M
+calls_definitions=N:M` on its first and last line, recomputed and drift-gated by
+the vendored `ratios/` skill. (Codex's original `# === RATIOS ===` fenced-block
+dialect and its bespoke `scripts/ratios_check.py` were replaced with this
+canonical form during the migration.)
 
 ---
 

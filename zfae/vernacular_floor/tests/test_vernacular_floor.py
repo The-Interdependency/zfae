@@ -1,7 +1,4 @@
-# === RATIOS ===
-# loc_comments: hmmm
-# unresolved: corpus_backed_affix_tests
-# === END RATIOS ===
+# ratios: loc_comments=45:1 imports_exports=9:1 calls_definitions=28:7
 """Contract tests for the vernacular floor scaffold."""
 
 from __future__ import annotations
@@ -60,8 +57,4 @@ class VernacularFloorTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
-# === RATIOS ===
-# loc_comments: hmmm
-# unresolved: corpus_backed_affix_tests
-# === END RATIOS ===
+# ratios: loc_comments=45:1 imports_exports=9:1 calls_definitions=28:7

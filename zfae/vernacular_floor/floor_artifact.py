@@ -1,7 +1,4 @@
-# === RATIOS ===
-# loc_comments: hmmm
-# unresolved: edcmbone_embedding_contract
-# === END RATIOS ===
+# ratios: loc_comments=33:6 imports_exports=5:5 calls_definitions=13:5
 """Artifact emission and loading for vernacular floor gonols."""
 
 from __future__ import annotations
@@ -59,9 +56,4 @@ def embedding_rows(gonols: Iterable[FloorGonol]) -> Iterator[tuple[str, tuple[fl
 
     for gonol in gonols:
         yield gonol.label, (gonol.r, gonol.theta, float(gonol.z))
-
-
-# === RATIOS ===
-# loc_comments: hmmm
-# unresolved: edcmbone_embedding_contract
-# === END RATIOS ===
+# ratios: loc_comments=33:6 imports_exports=5:5 calls_definitions=13:5

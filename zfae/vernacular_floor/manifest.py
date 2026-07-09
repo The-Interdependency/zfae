@@ -1,7 +1,4 @@
-# === RATIOS ===
-# loc_comments: hmmm
-# unresolved: word_membership_rule, affix_type_system, twist_fiber_action, homology_template
-# === END RATIOS ===
+# ratios: loc_comments=18:28 imports_exports=3:3 calls_definitions=3:3
 """Manifest and membership predicate stub for the English vernacular floor."""
 
 from __future__ import annotations
@@ -62,9 +59,4 @@ def unresolved_membership_rule(lemma: str, metadata: Optional[Mapping[str, objec
     raise NotImplementedError(
         f"vernacular membership for {lemma!r} is hmmm; provide a pinned predicate"
     )
-
-
-# === RATIOS ===
-# loc_comments: hmmm
-# unresolved: word_membership_rule, affix_type_system, twist_fiber_action, homology_template
-# === END RATIOS ===
+# ratios: loc_comments=18:28 imports_exports=3:3 calls_definitions=3:3

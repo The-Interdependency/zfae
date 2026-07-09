@@ -1,7 +1,4 @@
-# === RATIOS ===
-# loc_comments: hmmm
-# unresolved: upstream_codebook_path
-# === END RATIOS ===
+# ratios: loc_comments=32:4 imports_exports=4:3 calls_definitions=14:3
 """Read-only import boundary for the upstream public gonol glyph codebook."""
 
 from __future__ import annotations
@@ -50,9 +47,4 @@ def is_prime(n: int) -> bool:
         if n % candidate == 0:
             return False
     return True
-
-
-# === RATIOS ===
-# loc_comments: hmmm
-# unresolved: upstream_codebook_path
-# === END RATIOS ===
+# ratios: loc_comments=32:4 imports_exports=4:3 calls_definitions=14:3

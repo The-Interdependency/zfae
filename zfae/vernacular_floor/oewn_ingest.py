@@ -1,7 +1,4 @@
-# === RATIOS ===
-# loc_comments: hmmm
-# unresolved: optional_wn_dependency, offline_artifact_schema
-# === END RATIOS ===
+# ratios: loc_comments=17:4 imports_exports=3:3 calls_definitions=4:3
 """OEWN relation-graph ingestion boundary."""
 
 from __future__ import annotations
@@ -35,9 +32,4 @@ def fetch_oewn_relation_graph(lemma: str) -> RelationGraph:
     raise NotImplementedError(
         "OEWN fetch is an external-network build step; provide an offline artifact or install wn/oewn:2025"
     )
-
-
-# === RATIOS ===
-# loc_comments: hmmm
-# unresolved: optional_wn_dependency, offline_artifact_schema
-# === END RATIOS ===
+# ratios: loc_comments=17:4 imports_exports=3:3 calls_definitions=4:3

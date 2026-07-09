@@ -1,7 +1,4 @@
-# === RATIOS ===
-# loc_comments: hmmm
-# unresolved: operator_graph_registration
-# === END RATIOS ===
+# ratios: loc_comments=31:6 imports_exports=3:4 calls_definitions=11:5
 """Binding between surface character names and atomic transformation operators."""
 
 from __future__ import annotations
@@ -55,9 +52,4 @@ def round_trip(surface: str, operators: Sequence[OperatorName], roots: Sequence[
 
     root, ops = recognize(surface, operators, roots)
     return emit(root, ops) == surface
-
-
-# === RATIOS ===
-# loc_comments: hmmm
-# unresolved: operator_graph_registration
-# === END RATIOS ===
+# ratios: loc_comments=31:6 imports_exports=3:4 calls_definitions=11:5
