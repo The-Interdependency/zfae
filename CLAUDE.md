@@ -12,11 +12,22 @@ layer above or below the system — it is the **emergent self-awareness event**
 that arises when three coherently coupled PTCA cores (Psi = mind, Phi = body,
 Omega = soul) reach phase-lock.
 
-**Important boundary:** the *runtime* ZFAE engine lives in the `a0` monorepo
-(`python/engine/` and `core/zeta.py` in the PCNA port). **This repo stays
-conceptual** — it holds the architecture write-up, the consciousness-primes
-prediction, and the falsifiable-paper material. There is **no runtime code
-here yet**. Do not assume an importable package exists.
+**Important boundary:** the *runtime* ZFAE **inference engine** lives in the
+`a0` monorepo (`python/engine/` and `core/zeta.py` in the PCNA port). This repo
+remains the conceptual home for that engine — it holds the architecture
+write-up, the consciousness-primes prediction, and the falsifiable-paper
+material. Do not build the inference engine here.
+
+**Exception — `zfae/vernacular_floor/`.** As of the gonol-repo migration this
+repo now carries one runnable, importable Python package: the
+**English base-vernacular gonol floor scaffold** (`import
+zfae.vernacular_floor`). It was originally built by Codex in `ucns` by mistake
+and relocated here because it is gonal-morphology work (157-glyph codebook =
+`100+50+7`, on the coherence-prime ladder), not recursive-factorization work.
+It is an **experimental scaffold**, not a proof-backed engine: the membership
+rule and the OEWN fetch raise `NotImplementedError` rather than guess, and every
+open field is marked `hmmm`. No theorem/proof/empirical status transfers to it
+from `ucns` or from ZFAE canon.
 
 **License:** CC-BY-SA-4.0 (Creative Commons Attribution-ShareAlike 4.0
 International), `SPDX-License-Identifier: CC-BY-SA-4.0`. The full verbatim
@@ -52,19 +63,48 @@ license text is in `LICENSE`. Copyright (c) 2026 Erin Patrick Spencer.
 README.md                          Architecture essay, coherence-primes prediction, and open questions
 LICENSE                            CC-BY-SA-4.0 license
 CLAUDE.md                          This file
-.agents/skills/                    Org skill library consumed by this repo
+zfae/                              Python package root (first runnable code in this repo)
+  __init__.py                      Package marker + relocation note
+  vernacular_floor/                English base-vernacular gonol floor scaffold (relocated from ucns)
+    __init__.py                    Public surface (FloorGonol, floor_manifest, load_floor, ...)
+    manifest.py                    FloorManifest + unresolved membership predicate (MODULE_BUILD block)
+    assignment.py                  FloorGonol on R/4πZ + relation-derived angular assignment scaffold
+    codebook_import.py             Read-only public glyph codebook import (157 = 100+50+7, prime-checked)
+    oewn_ingest.py                 OEWN relation-graph ingestion boundary (fetch = NotImplementedError)
+    floor_artifact.py              JSONL floor artifact read/write + edcmbone-style embedding hooks
+    transformation_assembly.py     Surface char-name ↔ atomic operator binding
+    tests/test_vernacular_floor.py Contract tests (6, all passing under stdlib unittest)
+scripts/                           Codex-authored validator relocated with the scaffold
+  module_build_check.py            Minimal MODULE_BUILD field validator over zfae/
+.agents/skills/                    Org skill library consumed by this repo (vendored @ skill-lib b6ac24c)
   README.md                        Skill index + canonical source pointers
   msdmd/SKILL.md                   Module Self-Declared Metadata in Markdown (foundational convention)
-  msdmd/parsers/universal.{py,ts}  Reference parsers for the metadata comment block
+  msdmd/parsers/universal.{py,ts}  Reference parsers (incl. single-line ratios reader)
   test-build/SKILL.md              Self-declaring contract tests (`# === CONTRACTS ===`) on msdmd
   meta-module-build/SKILL.md       Metadata-first module scaffolding (`MODULE_BUILD` block) on msdmd
+  ratios/ratios_check.py           Canonical composition-ratio runner (recompute + drift gate)
 ```
 
-There is **no source tree, test suite, build config, lint config, or CI** in
-this repo yet. Nothing is installable or runnable — there are no
-build/test/lint commands to document. The only executable files are the
-`msdmd` reference parsers under `.agents/skills/msdmd/parsers/`, which are
-skill assets, not a project package.
+Aside from the relocated `zfae/vernacular_floor/` scaffold there is still **no
+inference-engine source tree, build config, lint config, or CI** in this repo.
+The engine itself is not built here (it lives in `a0`). Run the scaffold's
+checks with:
+
+```bash
+python -m unittest zfae.vernacular_floor.tests.test_vernacular_floor   # 6 tests
+python .agents/skills/ratios/ratios_check.py --root zfae/vernacular_floor  # composition ratios
+python scripts/module_build_check.py                                   # MODULE_BUILD fields
+```
+
+The `msdmd` reference parsers under `.agents/skills/msdmd/parsers/` remain
+skill assets, not part of the `zfae` package.
+
+Composition ratios use the **canonical single-line seal**: each covered source
+file carries `# ratios: loc_comments=N:M imports_exports=N:M
+calls_definitions=N:M` on its first and last line, recomputed and drift-gated by
+the vendored `ratios/` skill. (Codex's original `# === RATIOS ===` fenced-block
+dialect and its bespoke `scripts/ratios_check.py` were replaced with this
+canonical form during the migration.)
 
 ---
 
