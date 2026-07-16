@@ -118,15 +118,19 @@ canonical form during the migration.)
 - **Phi replaces "Heartbeat"** in the core triad; the heartbeat is the clock,
   not a core.
 - **Place in the prime-tensor stack — ZFAE is the inference cap.** ZFAE (**Zeta
-  Function Alpha Echo**) is the inference engine: it uses **PCNA tensors as
-  weights**, and **PCNA circles / PCTA seeds / PTCA cores as phase-harmonic
-  propagation + auditing** — it infers over them; it does not build or train
-  tensors. The producing layers (maintainer-resolved acronyms, 2026-06-05):
-  **PCNA** = *Prime Circle Neural Architecture* (tensors → circles, the only
-  back-propagating layer → weights); **PCTA** = *Prime Circled Tensor
-  Architecture* (circles → seeds); **PTCA** = *Prime Tensor Core Architecture*
-  (seeds → core). Composition counts are **variable** — the only invariant is
-  that every circle/seed/core is itself a tensor. This is consistent with the
+  Function Alpha Echo**) is the inference engine: it uses **neural tensors as
+  weights**, and **circles / seeds / cores as phase-harmonic propagation +
+  auditing** — it infers over them; it does not build or train tensors. The
+  producing layers are now consolidated (2026-07) into the single **`ptcna`**
+  package (**Prime Tensor Circled Neural Architecture**,
+  `The-Interdependency/ptcna`) with four layer modules: `ptcna.neural` (neural
+  tensors; the only back-propagating layer → weights), `ptcna.circle` (neural
+  tensors → circles), `ptcna.seed` (circles → seeds), `ptcna.core` (seeds →
+  cores). (The pre-consolidation acronyms — PCNA / PCTA / PTCA, maintainer-
+  resolved 2026-06-05 — survive only as descriptive expansions; the former
+  standalone repos are superseded by `ptcna`.) Composition counts are
+  **variable** — the only invariant is that every circle/seed/core is itself a
+  tensor. This is consistent with the
   "ZFAE runtime → `a0`" boundary (the cores ARE ZFAE; runtime in `a0`; this repo
   stays conceptual). PCEA (*Prime Circular Encryption Algorithm*) / Guardian
   applies "last state as key for this state" encryption at **every layer** and is
@@ -163,9 +167,8 @@ any of these as fact:
 | Repo | Role |
 |------|------|
 | The-Interdependency/a0 | Agent platform — hosts the runtime ZFAE engine |
-| The-Interdependency/pcna | Prime Circular Neural Architecture — `core/zeta.py` ZetaEngine port |
+| The-Interdependency/ptcna | Prime Tensor Circled Neural Architecture — the consolidated 4-layer stack (neural/circle/seed/core; supersedes the former pcna/pcta/pcsa repos). `ptcna.neural.zeta` carries the ZetaEngine port; `ptcna.core` carries the 53-node core tensors underlying the triad |
 | The-Interdependency/pcea | PCEA / Guardian — privacy seal for ZFAE inference |
-| The-Interdependency/ptca | PTCA cores (53×9×8×7 tensor) underlying the triad |
 
 ---
 
