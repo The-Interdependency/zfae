@@ -1,4 +1,4 @@
-# ratios: loc_comments=276:33 imports_exports=10:8 calls_definitions=119:14
+# ratios: loc_comments=285:37 imports_exports=10:8 calls_definitions=124:15
 """Explore harmonic structure in msdmd RATIOS without changing the RATIOS seal.
 
 Usage:
@@ -93,6 +93,8 @@ def semantic_file_graph(collection: dict, root: Path, eligible: Iterable[str]) -
     """Project msdmd declaration edges onto source files that own both ids."""
     eligible_set = set(eligible)
     id_files: dict[str, set[str]] = {}
+    # Schema 2 rewrites source_id and resolved targets to qualified addresses.
+    address_files: dict[str, set[str]] = {}
     for declaration in collection.get("declarations", []):
         file_value = declaration.get("file")
         identifier = declaration.get("id")
@@ -100,6 +102,12 @@ def semantic_file_graph(collection: dict, root: Path, eligible: Iterable[str]) -
             path = str((root / str(file_value)).resolve())
             if path in eligible_set:
                 id_files.setdefault(str(identifier), set()).add(path)
+                if declaration.get("address"):
+                    address_files.setdefault(str(declaration["address"]), set()).add(path)
+
+    def owners(key: str) -> set[str]:
+        # Exact address first; the short id is the legacy/unresolved fallback.
+        return address_files.get(key) or id_files.get(key, set())
 
     adjacency = {node: set() for node in eligible_set}
     unresolved: list[str] = []
@@ -107,8 +115,14 @@ def semantic_file_graph(collection: dict, root: Path, eligible: Iterable[str]) -
     for edge in collection.get("edges", []):
         source_id = str(edge.get("source_id") or edge.get("from") or "")
         target_id = str(edge.get("to") or "")
-        sources = id_files.get(source_id, set())
-        targets = id_files.get(target_id, set())
+        if edge.get("target_resolution") in {"ambiguous", "external-or-unresolved"}:
+            # The collector could not pick one owning declaration; a short id
+            # matching several files must not be counted as resolved.
+            if source_id and target_id:
+                unresolved.append(f"{source_id}->{target_id}")
+            continue
+        sources = owners(source_id)
+        targets = owners(target_id)
         if not sources or not targets:
             if source_id and target_id:
                 unresolved.append(f"{source_id}->{target_id}")
@@ -351,4 +365,4 @@ def main(argv: list[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-# ratios: loc_comments=276:33 imports_exports=10:8 calls_definitions=119:14
+# ratios: loc_comments=285:37 imports_exports=10:8 calls_definitions=124:15
